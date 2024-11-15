@@ -200,7 +200,7 @@ PyYAML==6.0.2
 pyzmq==25.0.2  # Replace with correct version if known
 qpd==0.4.4
 querystring-parser==1.2.4
-ray==2.10.0
+ray>=2.31.0
 referencing==0.35.1
 regex==2024.9.11
 requests==2.32.3
