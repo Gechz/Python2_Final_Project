@@ -45,7 +45,7 @@ dash_auth==2.3.0
 dash_cytoscape==1.0.2
 dask==2023.5.0
 databricks-cli==0.18.0
-debugpy==1.6.7   # Replace with correct version if needed
+debugpy<=1.6.5   # Replace with correct version if needed
 decorator==5.1.1  # Replace with correct version if known
 Deprecated==1.2.14
 deprecation==2.1.0
@@ -108,7 +108,7 @@ itsdangerous==2.2.0
 jedi==0.18.2  # Replace with correct version if known
 Jinja2==3.1.4
 jmespath==1.0.1
-joblib>=1.1.1
+joblib==1.1.1
 jsonschema==4.23.0
 jsonschema-specifications==2023.12.1
 jupyter-dash==0.4.2
@@ -121,7 +121,7 @@ kiwisolver==1.4.7
 kmodes==0.12.2
 libclang==18.1.1
 lightgbm==4.5.0
-llvmlite==0.41.1
+llvmlite==0.39.0
 locket==1.0.0
 lxml==5.3.0
 m2cgen==0.10.0
@@ -143,8 +143,8 @@ nbformat==5.10.4
 nest-asyncio==1.5.6  # Replace with correct version if known
 networkx==3.1
 nltk==3.9.1
-numba>=0.55
-numpy>=1.26.0,<2.0  # Upgrade Numpy version
+numba==0.55
+numpy<=1.21.0  # Upgrade Numpy version
 oauthlib==3.2.2
 opt_einsum==3.4.0
 optuna==4.0.0
@@ -194,7 +194,7 @@ python-dateutil==2.8.2  # Replace with correct version if known
 python-multipart==0.0.17
 pytz==2022.7.1
 PyWavelets==1.4.1
-pywin32>=304  # Only relevant for Windows environments
+pywin32<=304  # Only relevant for Windows environments
 PyYAML==6.0.2
 pyzmq==25.0.2  # Replace with correct version if known
 qpd==0.4.4
@@ -213,7 +213,7 @@ s3transfer==0.10.3
 SALib==1.4.8
 schemdraw==0.15
 scikit-base==0.5.2
-scikit-learn==1.2.2
+scikit-learn==1.0.2
 scikit-learn-intelex==2024.5.0
 scikit-optimize==0.10.2
 scikit-plot==0.3.7
