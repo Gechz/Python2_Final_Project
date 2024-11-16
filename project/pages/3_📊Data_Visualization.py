@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 # Load the dataset
 @st.cache_data
 def load_data():
-    return pd.read_csv("project/pages/hour.csv")
+    return pd.read_csv("pages/hour.csv")
 
 # Transform the data as needed for EDA
 @st.cache_data
@@ -194,11 +194,18 @@ def display_user_type_behavior(df, selected_years, selected_user_types, time_uni
 
     column_for_grouping = time_unit_mapping[time_unit]
 
+    # Ensure weekdays are sorted in the correct order if the time unit is 'Day of the Week'
+    if time_unit == "Day of the Week":
+        day_order = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+        df['weekday'] = pd.Categorical(df['weekday'], categories=day_order, ordered=True)
+
     # Calculate the mean registered and casual percentages by each time unit
     def calculate_percentage(df, column, percentage_col):
         if column not in df.columns:
             raise KeyError(f"Column '{column}' not found in DataFrame.")
-        return df.groupby(column)[percentage_col].mean()
+        grouped_data = df.groupby(column)[percentage_col].mean()
+        grouped_data = grouped_data.reindex(day_order) if column == 'weekday' else grouped_data  # Ensure order for weekdays
+        return grouped_data
 
     # Initialize figure
     fig = go.Figure()
@@ -211,13 +218,14 @@ def display_user_type_behavior(df, selected_years, selected_user_types, time_uni
         year_data = df_2011 if year == 2011 else df_2012
         for user_type in selected_user_types:
             column = 'registered_percentage' if user_type == "Registered" else 'casual_percentage'
+            mean_data = calculate_percentage(year_data, column_for_grouping, column)
             fig.add_trace(go.Scatter(
-                x=calculate_percentage(year_data, column_for_grouping, column).index,
-                y=calculate_percentage(year_data, column_for_grouping, column).values,
+                x=mean_data.index,
+                y=mean_data.values,
                 mode='lines+markers',
                 name=f'{year} {user_type}',
                 line=dict(color=colors[str(year)], width=2, dash=line_styles[user_type]),
-                marker=dict(size=6)
+                marker=dict(size=6, symbol='circle')
             ))
 
     # Update layout to make axis titles and tick labels black and tick marks black
@@ -237,6 +245,8 @@ def display_user_type_behavior(df, selected_years, selected_user_types, time_uni
             tickcolor="black",  # Black tick marks
             showgrid=True,
             gridcolor="lightgray",
+            categoryorder='array',  # Ensure the correct order for days of the week
+            categoryarray=day_order if time_unit == "Day of the Week" else None
         ),
         paper_bgcolor="#ffffff",  # White background for better contrast
         plot_bgcolor="#ffffff",
@@ -293,6 +303,8 @@ def display_heatmaps(df, selected_y_axis, selected_heatmaps):
             title=title,
         )
         fig.update_layout(
+            width = 500,
+            height = 350,
             xaxis=dict(tickmode='linear', color='black', title="Hour of the Day", title_font=dict(color='black'), tickfont=dict(color='black')),
             yaxis=dict(color='black', title=selected_y_axis, title_font=dict(color='black'), tickfont=dict(color='black')),
             title_font=dict(color='black'),
@@ -373,7 +385,7 @@ def display_histogram_and_boxplot(df,selected_label):
     selected_feature = feature_labels[selected_label]
     # Histogram
     sns.histplot(df[selected_feature], kde=True, color="orange", ax=axes[0])
-    axes[0].set_title(f'Histogram of {selected_feature.capitalize()}', color='black', fontsize=16)
+    axes[0].set_title(f'Histogram of {selected_label.capitalize()}', color='black', fontsize=16)
     axes[0].set_xlabel(selected_feature.capitalize(), color='black', fontsize=12)
     axes[0].set_ylabel('Frequency', color='black', fontsize=12)
     axes[0].set_facecolor('white')
@@ -385,7 +397,7 @@ def display_histogram_and_boxplot(df,selected_label):
         flierprops=dict(marker='o', markerfacecolor='orange', markersize=5),
         ax=axes[1]
     )
-    axes[1].set_title(f'Boxplot of {selected_feature.capitalize()}', color='black', fontsize=16)
+    axes[1].set_title(f'Boxplot of {selected_label.capitalize()}', color='black', fontsize=16)
     axes[1].set_xlabel(selected_feature.capitalize(), color='black', fontsize=12)
     axes[1].set_facecolor('white')
 
@@ -500,15 +512,16 @@ def show_eda():
         st.sidebar.header("User Type Behavior Options")
         # User selections for user type behavior visualization
         selected_years = st.sidebar.multiselect("Select Year(s):", [2011, 2012], default=[2011, 2012])
-        selected_user_types = st.sidebar.multiselect("Select User Type(s):", ["Registered", "Casual"], default=["Registered", "Casual"])
-        time_unit = st.sidebar.selectbox("Select Time Granularity:", ["Hour", "Day of the Week", "Month", "Season", "Quarter"])
+        selected_user_types = st.sidebar.multiselect("Select User Type(s):", ["Registered", "Casual"], default=["Registered"])
+        time_unit = st.sidebar.selectbox("Select Time Granularity:", ["Month","Day of the Week", "Hour", "Season", "Quarter"])
         # Call the display_user_type_behavior function with user selections
         display_user_type_behavior(df, selected_years, selected_user_types, time_unit)
         st.subheader("User Type Behavior Insight")
         st.markdown(
             """
             **Analysis**:
-            - This visualization highlights that the proportion of registered users has been increasing over time, suggesting a trend towards more frequent and committed usage.
+            - This visualization highlights that the proportion of registered users has been increasing ever so slightly over time, suggesting a trend towards more frequent and committed usage. 
+            - As we saw in the previous graph, there was a massive turndown in overall usage at December 2012, so if we focus at middle of the year months, this trend is clearer.
             """
         )
 
@@ -516,9 +529,9 @@ def show_eda():
         st.header("3. Heatmaps -- Identifying Peak Usage")
         st.sidebar.header("Heatmap Options")
         # User selections for heatmaps
-        selected_y_axis = st.sidebar.selectbox("Select Y-axis Feature:", ["Weekday/Weekend", "Month", "Season", "Quarter"])
+        selected_y_axis = st.sidebar.selectbox("Select Y-axis Feature:", ["Month","Weekday/Weekend", "Season", "Quarter"])
         selected_heatmaps = st.sidebar.multiselect(
-            "Select Heatmaps to Display:", ["Total Count", "Registered Users", "Casual Users"], default=["Total Count", "Registered Users", "Casual Users"]
+            "Select Heatmaps to Display:", ["Total Count", "Registered Users", "Casual Users"], default=["Registered Users", "Casual Users"]
         )
         # Call the display_heatmaps function with user selections
         display_heatmaps(df, selected_y_axis, selected_heatmaps)
