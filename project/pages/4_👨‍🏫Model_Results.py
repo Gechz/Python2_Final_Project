@@ -16,7 +16,7 @@ def show_model_results():
     #st.table(predictions.head(2))
 
     # Model Results placeholder
-    with st.expander("Model Results",expaned=True):
+    with st.expander("Model Results",expanded=True):
         # Model Top Features
         st.subheader("Most Important Features")
         st.markdown("""
