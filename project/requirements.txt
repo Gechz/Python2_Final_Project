@@ -1,6 +1,6 @@
 streamlit
 pandas
-numpy
+numpy==1.22.1
 plotly
 scikit-learn==1.2.2
 seaborn
