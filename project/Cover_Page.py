@@ -22,11 +22,11 @@ st.header("Project Team")
     
     # Define team members with specific images and roles
 team_data = [
-        {"name": "Vitus Schlereth", "role": "Data Engineering Expert", "image": "pages/path_to_vitus.jpg"},
-        {"name": "Alina Edigareva", "role": "Data Analytics Expert", "image": "pages/path_to_alina.jpg"},
-        {"name": "Yannish Bhandari", "role": "Chief Tech Consultant", "image": "pages/path_to_yannish.jpg"},
-        {"name": "Susana Luna", "role": "Data Scientist Expert", "image": "pages/path_to_susana.jpg"},
-        {"name": "Gabriel Chapman", "role": "Data Scientist Expert", "image": "pages/path_to_gabriel.jpg"}
+        {"name": "Vitus Schlereth", "role": "Data Engineering Expert", "image": "project/pages/path_to_vitus.jpg"},
+        {"name": "Alina Edigareva", "role": "Data Analytics Expert", "image": "project/pages/path_to_alina.jpg"},
+        {"name": "Yannish Bhandari", "role": "Chief Tech Consultant", "image": "project/pages/path_to_yannish.jpg"},
+        {"name": "Susana Luna", "role": "Data Scientist Expert", "image": "project/pages/path_to_susana.jpg"},
+        {"name": "Gabriel Chapman", "role": "Data Scientist Expert", "image": "project/pages/path_to_gabriel.jpg"}
     ]
     
     # Display each team member in a larger format
