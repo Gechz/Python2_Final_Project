@@ -9,7 +9,7 @@ def show_model_results():
     @st.cache_data
     def load_predictions():
         # Load the predictions dataset
-        return pd.read_csv('pages/predictions.csv', parse_dates=['date'])
+        return pd.read_csv('project/pages/predictions.csv', parse_dates=['date'])
 
     # Load the predictions data
     predictions = load_predictions()
