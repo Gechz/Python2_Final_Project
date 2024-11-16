@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 # Load the dataset
 @st.cache_data
 def load_data():
-    return pd.read_csv("pages/hour.csv")
+    return pd.read_csv("project/pages/hour.csv")
 
 # Transform the data as needed for EDA
 @st.cache_data
