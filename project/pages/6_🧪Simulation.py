@@ -9,7 +9,7 @@ sys.stdout.reconfigure(encoding='utf-8')
 # Load the dataset
 @st.cache_data
 def load_data():
-    return pd.read_csv("pages/hour.csv")
+    return pd.read_csv("project/pages/hour.csv")
 
 hour_df = load_data()
 # Owner's note: While it is true that the transformations could be skipped by applying the transformations in a notebook and exporting the cleaned dataset
@@ -271,7 +271,7 @@ def show_simulation():
         # Import model loading function here to ensure it is loaded when this block runs
         from pycaret.regression import load_model
         # Load the model within this block only when the button is clicked
-        model = load_model("pages/model_f3")
+        model = load_model("project/pages/model_f3")
 
     if st.button("Run Simulation"):
         # Run prediction logic
