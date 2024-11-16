@@ -3,7 +3,7 @@ adagio>=0.2.6
 aiofiles>=23.2.1
 aiosignal>=1.3.1
 alembic>=1.13.3
-altair>=5.4.1
+altair==4.2.2
 ansi2html>=1.9.2
 antlr4-python3-runtime>=4.11.1
 anyio>=4.5.2
@@ -31,7 +31,7 @@ comm>=0.1.3
 contourpy>=1.0.6
 cryptography>=43.0.3
 cycler>=0.12.1
-Cython>=3.0.11
+Cython==0.29.21
 daal>=2024.5.0
 daal4py>=2024.5.0
 dacite>=1.8.1
@@ -70,7 +70,7 @@ flatbuffers>=24.3.25
 fonttools>=4.54.1
 frozenlist>=1.5.0
 fs>=2.4.16
-fsspec>=2024.10.0
+fsspec==2021.11.1
 fugue>=0.8.6
 fugue-sql-antlr>=0.2.2
 future>=1.0.0
@@ -90,7 +90,7 @@ h11>=0.14.0
 h5py>=3.11.0
 htmlmin>=0.1.12
 httpcore>=1.0.6
-httpx>=0.27.2
+httpx==0.21.1
 huggingface-hub>=0.26.2
 hyperopt>=0.2.7
 idna>=3.10
@@ -112,7 +112,7 @@ joblib>=1.1.1
 jsonschema>=4.23.0
 jsonschema-specifications>=2023.12.1
 jupyter-dash>=0.4.2
-jupyter_client>=8.0.0
+jupyter_client==7.1.2
 jupyter_core>=5.3.0
 jupyterlab_widgets>=3.0.13
 kaleido>=0.2.1
@@ -120,8 +120,8 @@ keras>=2.13.1
 kiwisolver>=1.4.7
 kmodes>=0.12.2
 libclang>=18.1.1
-lightgbm>=4.5.0
-llvmlite>=0.35.0
+lightgbm==3.3.2
+llvmlite==0.35.0
 locket>=1.0.0
 lxml>=5.3.0
 m2cgen>=0.10.0
@@ -129,10 +129,10 @@ Mako>=1.3.6
 Markdown>=3.7
 markdown-it-py>=3.0.0
 MarkupSafe>=2.1.5
-matplotlib>=3.6.0
+matplotlib==3.4.3
 matplotlib-inline>=0.1.6
 mdurl>=0.1.2
-mlflow>=1.30.1
+mlflow==1.26.1
 mlxtend>=0.23.1
 moto>=5.0.19
 msgpack>=1.1.0
@@ -143,8 +143,8 @@ nbformat>=5.10.4
 nest-asyncio>=1.5.6
 networkx>=3.1
 nltk>=3.9.1
-numba>=0.56
-numpy>=1.22.0  # Updated to support Python 3.12
+numba==0.52.0
+numpy==1.21.4  # Updated to support Python 3.12
 
 oauthlib==3.2.2
 opt_einsum==3.4.0
@@ -153,7 +153,7 @@ orjson==3.10.11
 outcome==1.3.0.post0
 oyaml==1.0
 packaging==21.3
-pandas==1.5.3
+pandas==1.3.5
 parso==0.8.3  # Replace with correct version if known
 partd==1.4.1
 patsy==0.5.6
@@ -163,7 +163,7 @@ pickleshare==0.7.5  # Replace with correct version if known
 pillow==10.4.0
 pkgutil_resolve_name==1.3.10
 platformdirs==3.11.0  # Replace with correct version if known
-plotly==5.24.1
+plotly==5.9.0
 plotly-resampler==0.10.0
 pluggy==1.5.0
 pmdarima==2.0.4
@@ -214,11 +214,11 @@ s3transfer==0.10.3
 SALib==1.4.8
 schemdraw==0.15
 scikit-base>=0.6.0
-scikit-learn>=1.0
+scikit-learn==0.24.2
 scikit-learn-intelex==2024.5.0
 scikit-optimize==0.10.2
 scikit-plot==0.3.7
-scipy>=1.10.1
+scipy==1.7.3
 seaborn==0.12.2
 selenium==4.2.0
 semantic-version==2.10.0
@@ -236,7 +236,7 @@ sqlparse==0.5.1
 stack-data==0.6.2  # Replace with correct version if known
 starlette==0.41.2
 statsforecast==1.5.0
-statsmodels==0.14.1
+statsmodels==0.12.2
 streamlit==1.40.0
 tabulate==0.9.0
 tangled-up-in-unicode==0.2.0
@@ -255,9 +255,9 @@ threadpoolctl==3.5.0
 toml==0.10.2
 tomli==2.0.2
 toolz==1.0.0
-tornado==6.3.1  # Replace with correct version if known
+tornado==6.1  # Replace with correct version if known
 tqdm==4.66.6
-traitlets==5.11.0  # Replace with correct version if known
+traitlets==5.1.0  # Replace with correct version if known
 triad==0.9.1
 trio==0.27.0
 trio-websocket==0.11.1
@@ -287,6 +287,6 @@ xxhash==3.5.0
 ydata-profiling==4.6.0
 yellowbrick==1.5
 zict==3.0.0
-zipp==3.16.0  # Replace with correct version if known
+zipp==3.6.0  # Replace with correct version if known
 zope.event==5.0
 zope.interface==7.1.1
