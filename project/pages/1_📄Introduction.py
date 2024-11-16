@@ -15,10 +15,10 @@ def show_introduction():
     col1, col2 = st.columns(2)
     
     with col1:
-        st.image("pages/path_to_capitol.jpg", use_container_width=True)
+        st.image("project/pages/path_to_capitol.jpg", use_container_width=True)
         
     with col2:
-        st.image("pages/path_to_bike.jpg", use_container_width=True)
+        st.image("project/pages/path_to_bike.jpg", use_container_width=True)
 
     # Overlay text below the images
     st.write("""
