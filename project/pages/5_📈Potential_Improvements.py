@@ -8,7 +8,7 @@ def pot_imp():
         {
             "title": "Scale-Up the Model",
             "text": "This model could be enhanced so it compiles hourly usage per day or week so one can strategize supply accordingly",
-            "image_path": "project/pages/path_to_newdata.jpeg"  # Replace with actual path
+            "image_path": "project/pages/path_to_dev.png"  # Replace with actual path
         },
         {
             "title": "Need for More Data Up to 2024",
