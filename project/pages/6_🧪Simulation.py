@@ -2,9 +2,10 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import sys
+import codecs
 
+sys.stdout = codecs.getwriter('utf-8')(sys.stdout.detach())
 
-sys.stdout.reconfigure(encoding='utf-8')
 
 # Load the dataset
 @st.cache_data
