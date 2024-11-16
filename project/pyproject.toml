@@ -1,8 +1,0 @@
-[project]
-name = "Python 2 Final Project"
-version = "0.1.0"
-description = "D.C. Bike Sharing Prediction."
-authors = ["Gabriel Chapman <gechz96@gmail.com>"]
-
-[project.dependencies]
-python = "==3.8.20"
