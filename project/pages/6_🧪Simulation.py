@@ -280,7 +280,7 @@ def show_simulation():
         prediction = model.predict(df)[0]
         prediction = max(0, prediction)
         st.subheader(f"Predicted bike count at {hour}:00 on {user_date.strftime('%A, %B %d')} is:")
-        st.header("**{round(prediction)} bicycles**")
+        st.header(f"**{round(prediction)} bicycles**")
 
 
 
