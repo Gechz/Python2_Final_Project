@@ -24,7 +24,7 @@ def show_data_preparation():
             - Rows with missing values due to shifts and rolling means are dropped.
             """)
         with col2:
-            st.image("pages/path_to_histdata.png")
+            st.image("project/pages/path_to_histdata.png")
 
         # Cyclical Feature Creation section
         col1, col2 = st.columns(2)
@@ -38,7 +38,7 @@ def show_data_preparation():
             - This ensures that the model understands the cyclical nature of these variables (e.g., December is close to January).
             """)
         with col2:
-            st.image("pages/path_to_cyclicaldata.png")
+            st.image("project/pages/path_to_cyclicaldata.png")
 
         # Outcome section
         st.subheader("Outcome")
