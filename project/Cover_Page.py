@@ -48,5 +48,3 @@ pages = [
     ("Model Results", "5_Potential_Improvements"),
     ("Simulation", "6_Simulation")
 ]
-
-
