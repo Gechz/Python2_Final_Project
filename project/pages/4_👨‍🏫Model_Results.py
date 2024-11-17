@@ -437,6 +437,7 @@ def show_model_results():
         st.subheader("4. Top Features")
         st.image("project/pages/path_to_topfeat")
         st.markdown("Analysis: This graph lays out the most important features of the model")
-# Run the function to display content
+
+
 if __name__ == "__main__":
     show_model_results()
