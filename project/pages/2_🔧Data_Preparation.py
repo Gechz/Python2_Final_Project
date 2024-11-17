@@ -89,6 +89,6 @@ def show_data_preparation():
                 - **`windspeed`**: Multiplied by 67
         """)
 
-# Run the function to display content
+
 if __name__ == "__main__" or "streamlit" in __name__:
     show_data_preparation()
