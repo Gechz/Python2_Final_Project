@@ -42,6 +42,6 @@ def pot_imp():
         with col2:
             st.image(insight['image_path'])
 
-# Run the function to display content
+
 if __name__ == "__main__" or "streamlit" in __name__:
     pot_imp()
