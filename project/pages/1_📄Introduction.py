@@ -49,6 +49,6 @@ def show_introduction():
        to optimize both service quality and costs.
     """)
 
-# Call the function to display the content when the file is executed directly
+
 if __name__ == "__main__":
     show_introduction()
