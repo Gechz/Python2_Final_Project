@@ -23,7 +23,7 @@ def show_introduction():
     # Overlay text below the images
     st.write("""
     The Washington D.C. Bike-Sharing Analysis and Prediction project aims to support the administration of Washington D.C. 
-    in enhancing the operational efficiency of its bike-sharing service...
+    in enhancing the operational efficiency of its bike-sharing service.
     """)
 
     # Problem Presentation
