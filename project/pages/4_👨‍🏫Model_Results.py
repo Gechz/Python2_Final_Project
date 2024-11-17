@@ -432,7 +432,11 @@ def show_model_results():
         )
         st.plotly_chart(fig3, use_container_width=True)
         st.markdown("**Analysis :** The scatter plot helps visualize the overall predictive accuracy. The closer the points align with the diagonal line, the more accurate the predictions.")
-
+        
+        #Top Features
+        st.subheader("4. Top Features")
+        st.image("project/pages/path_to_topfeat")
+        st.markdown("Analysis: This graph lays out the most important features of the model")
 # Run the function to display content
 if __name__ == "__main__":
     show_model_results()
