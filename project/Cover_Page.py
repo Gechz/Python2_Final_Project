@@ -1,6 +1,5 @@
 import streamlit as st
 import importlib.util
-from pathlib import Path
 
 # Set up the app layout and default page configuration
 st.set_page_config(page_title="Python 2 Final Project", layout="wide")
