@@ -570,14 +570,14 @@ def show_eda():
         st.sidebar.header("Histogram and Boxplot Options")
         selected_label = st.sidebar.selectbox("Select a Feature to Inspect:",options=list(feature_labels.keys()))  
         display_histogram_and_boxplot(df,selected_label)
-        st.markdown("**Analysis Placeholder:** Histograms and boxplots help in understanding the distribution and identifying outliers in the data.")
+        st.markdown("**Analysis:** Histograms and boxplots help in understanding the distribution and identifying outliers in the data.")
 
         # Correlation Matrix
         st.header("2. Correlation Matrix")
         st.sidebar.header("Correlation Matrix Options")
         filter_correlation = st.sidebar.checkbox("Show Only Correlations >= |0.5|")
         display_correlation_matrix(df,filter_correlation)
-        st.markdown("**Analysis Placeholder:** The correlation matrix highlights relationships between numerical features. Filtering can help focus on stronger correlations.")
+        st.markdown("**Analysis:** The correlation matrix highlights relationships between numerical features. Filtering can help focus on stronger correlations.")
 
 
 
