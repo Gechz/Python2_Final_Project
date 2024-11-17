@@ -26,7 +26,7 @@ def pot_imp():
             "image_path": "project/pages/path_to_moreinfo.jpg"  
         },
         {
-            "title": "Next Steps: Predict Percentage of Registered Users and Use Synthetic Data",
+            "title": "Predict Percentage of Registered Users and Use Synthetic Data",
             "text": "The future course of action involves building predictive models focused on forecasting the percentage of registered users. Additionally, leveraging synthetic data can help expand and enhance the model, providing a more comprehensive understanding and supporting better decision-making.",
             "image_path": "project/pages/path_to_next.png"  
         }
