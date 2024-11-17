@@ -468,7 +468,7 @@ df = transform_data(df)
 
 # Display a preview of the data
 st.subheader("Brief Dataframe inspection after transformations:")
-st.dataframe(df.iloc[:,-15:].head(3))
+st.dataframe(df.iloc[:,-18:].head(3))
 
 feature_labels = {
 'Count': 'cnt',
