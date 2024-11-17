@@ -489,9 +489,9 @@ def show_eda():
     st.markdown("""
     Explore various visualizations below such as:
     - Histograms for bike counts
+    - Time-series analysis of bike usage trends
     - Boxplots for bike demand by season
     - Scatter plots for temperature vs. bike count
-    - Time-series analysis of bike usage trends
     """)
 
     # Business Insights section
