@@ -116,8 +116,8 @@ def display_time_series(df):
         x=weekly_total_usage['date'], 
         y=weekly_total_usage['total_weekly_usage'], 
         mode='lines+markers',
-        line=dict(color='#800020', width=2),  # Burgundy red line for total weekly usage
-        marker=dict(size=6),  # Markers to highlight each data point
+        line=dict(color='#800020', width=2),  
+        marker=dict(size=6), 
         name='Total Weekly Usage'
     ))
 
@@ -135,9 +135,9 @@ def display_time_series(df):
         title="Total Weekly Usage Over Time with Weekly Intervals",
         xaxis_title="Date",
         yaxis_title="Total Usage Count",
-        paper_bgcolor="white",  # White background for better readability
+        paper_bgcolor="white",  
         plot_bgcolor="white",   # White plot background for better readability
-        font=dict(color="black"),  # Black font for contrast
+        font=dict(color="black"),  
         title_font=dict(size=20, color="black"),
         legend=dict(
             title="Legend",
@@ -235,14 +235,14 @@ def display_user_type_behavior(df, selected_years, selected_user_types, time_uni
         yaxis_title="Percentage (%)",
         yaxis=dict(
             range=[0, 100],
-            title_font=dict(color="black"),  # Black y-axis title
-            tickfont=dict(color="black"),  # Black y-axis tick labels
-            tickcolor="black",  # Black tick marks
+            title_font=dict(color="black"),  
+            tickfont=dict(color="black"), 
+            tickcolor="black",  
         ),
         xaxis=dict(
-            title_font=dict(color="black"),  # Black x-axis title
-            tickfont=dict(color="black"),  # Black x-axis tick labels
-            tickcolor="black",  # Black tick marks
+            title_font=dict(color="black"),  
+            tickfont=dict(color="black"),  
+            tickcolor="black", 
             showgrid=True,
             gridcolor="lightgray",
             categoryorder='array',  # Ensure the correct order for days of the week
@@ -250,7 +250,7 @@ def display_user_type_behavior(df, selected_years, selected_user_types, time_uni
         ),
         paper_bgcolor="#ffffff",  # White background for better contrast
         plot_bgcolor="#ffffff",
-        font=dict(color="black"),  # Ensures other text elements are black
+        font=dict(color="black"), 
         title_font=dict(size=20, color="black"),
         legend=dict(font=dict(color="black")),
     )
@@ -514,7 +514,7 @@ def show_eda():
         selected_years = st.sidebar.multiselect("Select Year(s):", [2011, 2012], default=[2011, 2012])
         selected_user_types = st.sidebar.multiselect("Select User Type(s):", ["Registered", "Casual"], default=["Registered"])
         time_unit = st.sidebar.selectbox("Select Time Granularity:", ["Month","Day of the Week", "Hour", "Season", "Quarter"])
-        # Call the display_user_type_behavior function with user selections
+        # display_user_type_behavior function with user selections
         display_user_type_behavior(df, selected_years, selected_user_types, time_unit)
         st.subheader("User Type Behavior Insight")
         st.markdown(
@@ -533,7 +533,7 @@ def show_eda():
         selected_heatmaps = st.sidebar.multiselect(
             "Select Heatmaps to Display:", ["Total Count", "Registered Users", "Casual Users"], default=["Registered Users", "Casual Users"]
         )
-        # Call the display_heatmaps function with user selections
+        # Display_heatmaps function with user selections
         display_heatmaps(df, selected_y_axis, selected_heatmaps)
         st.subheader("Heatmap Insight")
         st.markdown(
@@ -580,6 +580,6 @@ def show_eda():
         st.markdown("**Analysis Placeholder:** The correlation matrix highlights relationships between numerical features. Filtering can help focus on stronger correlations.")
 
 
-# Run the function to display content
+
 if __name__ == "__main__" or "streamlit" in __name__:
     show_eda()
